@@ -1,0 +1,1 @@
+export const mapToArray = <T>(map:Map<any,T>):T[] => Array.from(map, ([, value]) => value );

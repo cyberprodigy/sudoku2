@@ -1,0 +1,11 @@
+db:
+  image: postgres:11-alpine
+  restart: always
+  environment:
+    POSTGRES_PASSWORD: NeedForSpeed
+    POSTGRES_USER: viking
+    POSTGRES_DB: sudoku2
+  ports:
+    - 5432:5432
+  volumes:
+    - ./db_patches/:/docker-entrypoint-initdb.d/

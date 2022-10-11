@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.enthusiast.sudoku2" version="1.10.0" android-versionCode="110000" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Sudoku 2</name>
+    <description>
+        Sudoku
+    </description>
+    <author email="enthusiast.studio@gmail.com" href="https://enthusiast.io"> 
+        Enthusiast Studio
+    </author>
+    <hook type="before_prepare" src="scripts/prebuild.js" />
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <preference name="orientation" value="portrait" />
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+        </config-file>
+
+        <resource-file src="network_security_config.xml" target="app/src/main/res/xml/network_security_config.xml"/>
+        <icon background="icons/android/mipmap-mdpi/ic_launcher.png" density="mdpi" foreground="icons/android/mipmap-mdpi/ic_launcher.png" />
+        <icon background="icons/android/mipmap-hdpi/ic_launcher.png" density="hdpi" foreground="icons/android/mipmap-hdpi/ic_launcher.png" />
+        <icon background="icons/android/mipmap-xhdpi/ic_launcher.png" density="xhdpi" foreground="icons/android/mipmap-xhdpi/ic_launcher.png" />
+        <icon background="icons/android/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" foreground="icons/android/mipmap-xxhdpi/ic_launcher.png" />
+        <icon background="icons/android/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi" foreground="icons/android/mipmap-xxxhdpi/ic_launcher.png" />
+    </platform>
+</widget>
+

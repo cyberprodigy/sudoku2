@@ -1,0 +1,97 @@
+{
+  "name": "io.enthusiast.sudoku2",
+  "displayName": "sudoku2",
+  "version": "1.10.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "react-scripts start --watch",
+    "debug": "react-scripts start --watch",
+    "dev": "react-scripts start --watch",
+    "start:device": "cordova run android --device",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "fixCanNotFindMatchingTarget": "cordova platform remove android --save; cordova platform add android --save",
+    "publish": "npm-run-all publish:*",
+    "publish:cleanup": "rm -f platforms/android/app/build/outputs/bundle/release/*.aab",
+    "publish:compile": "react-scripts build",
+    "publish:build": "cordova build --release --device android",
+    "publish:sign": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ./io.enthusiast.sudoku2.keystore ./platforms/android/app/build/outputs/bundle/release/app-release.aab default",
+    "publish:zipalign": "zipalign -v 4 ./platforms/android/app/build/outputs/bundle/release/app-release.aab ./platforms/android/app/build/outputs/bundle/release/app-release-aligned.aab",
+    "inst": "cordova run android --release -- --keystore=./io.enthusiast.sudoku2.keystore --storePassword=pastamajoneze --alias=default --password=pastamajoneze --packageType=aab"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.1",
+    "@mui/material": "^5.2.3",
+    "@mui/styles": "^5.2.3",
+    "@reduxjs/toolkit": "^1.6.2",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^12.20.7",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/styled-components": "^5.1.9",
+    "axios": "^0.21.1",
+    "cordova": "^11.0.0",
+    "cordova-android": "^10.1.1",
+    "dotenv": "^16.0.3",
+    "gsap": "^3.6.1",
+    "immer": "^9.0.1",
+    "node-properties-parser": "0.0.2",
+    "nopt": "^5.0.0",
+    "notistack": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "osenv": "^0.1.5",
+    "properties-parser": "^0.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.9",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.2",
+    "socket.io-client": "^4.1.2",
+    "styled-components": "^5.2.3",
+    "typescript": "^4.2.3",
+    "web-vitals": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.2",
+    "cordova-plugin-insomnia": "github:EddyVerbruggen/Insomnia-PhoneGap-Plugin"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-insomnia": {},
+      "cordova-plugin-oauth": {}
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

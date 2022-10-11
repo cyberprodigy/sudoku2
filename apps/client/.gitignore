@@ -1,0 +1,10 @@
+node_modules
+
+/plugins/
+/platforms/
+/build/
+/public/
+/www/static/
+/io.enthusiast.sudoku2.keystore
+/www
+account.txt
